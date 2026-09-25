@@ -1,0 +1,669 @@
+{
+  "Spanish": {
+    "Spain": {
+      "Code": 34,
+      "Cities": {
+        "Madrid": ["Castilla-La Mancha", "Community of Madrid"],
+        "Barcelona": ["Catalonia", "Aragon"]
+      }
+    },
+    "Mexico": {
+      "Code": 52,
+      "Cities": {
+        "Mexico City": ["Mexico City", "State of Mexico"],
+        "Guadalajara": ["Jalisco", "Colima"]
+      }
+    },
+    "Argentina": {
+      "Code": 54,
+      "Cities": {
+        "Buenos Aires": ["Buenos Aires Province", "La Plata"],
+        "Córdoba": ["Córdoba Province", "Villa Carlos Paz"]
+      }
+    },
+    "Chile": {
+      "Code": 56,
+      "Cities": {
+        "Santiago": ["Santiago Metropolitan", "Valparaíso Region"],
+        "Valdivia": ["Los Ríos Region", "Los Lagos Region"]
+      }
+    },
+    "Colombia": {
+      "Code": 57,
+      "Cities": {
+        "Bogotá": ["Cundinamarca", "Boyacá"],
+        "Medellín": ["Antioquia", "Caldas"]
+      }
+    },
+    "Peru": {
+      "Code": 51,
+      "Cities": {
+        "Lima": ["Lima Province", "Callao"],
+        "Cusco": ["Cusco Region", "Puno"]
+      }
+    },
+    "Venezuela": {
+      "Code": 58,
+      "Cities": {
+        "Caracas": ["Distrito Capital", "Miranda"],
+        "Maracaibo": ["Zulia", "Falcón"]
+      }
+    },
+    "Ecuador": {
+      "Code": 593,
+      "Cities": {
+        "Quito": ["Pichincha", "Napo"],
+        "Guayaquil": ["Guayas", "Los Ríos"]
+      }
+    },
+    "Bolivia": {
+      "Code": 591,
+      "Cities": {
+        "La Paz": ["La Paz Department", "Oruro"],
+        "Santa Cruz": ["Santa Cruz Department", "Beni"]
+      }
+    },
+    "Paraguay": {
+      "Code": 595,
+      "Cities": {
+        "Asunción": ["Central", "Alto Paraná"],
+        "Ciudad del Este": ["Alto Paraná", "Itapúa"]
+      }
+    },
+    "Uruguay": {
+      "Code": 598,
+      "Cities": {
+        "Montevideo": ["Montevideo Department", "Canelones"],
+        "Salto": ["Salto Department", "Artigas"]
+      }
+    },
+    "Costa Rica": {
+      "Code": 506,
+      "Cities": {
+        "San José": ["San José Province", "Alajuela"],
+        "Limón": ["Limón Province", "Puntarenas"]
+      }
+    },
+    "Panama": {
+      "Code": 507,
+      "Cities": {
+        "Panama City": ["Panama Province", "Colon"],
+        "David": ["Chiriquí", "Bocas del Toro"]
+      }
+    },
+    "Guatemala": {
+      "Code": 502,
+      "Cities": {
+        "Guatemala City": ["Guatemala Department", "Sacatepéquez"],
+        "Quetzaltenango": ["Quetzaltenango Department", "Totonicapán"]
+      }
+    },
+    "Honduras": {
+      "Code": 504,
+      "Cities": {
+        "Tegucigalpa": ["Francisco Morazán", "Choluteca"],
+        "San Pedro Sula": ["Cortés", "Atlántida"]
+      }
+    }
+  },
+  "European": {
+    "United Kingdom": {
+      "Code": 44,
+      "Cities": {
+        "London": ["Greater London", "Kent"],
+        "Manchester": ["Greater Manchester", "Cheshire"]
+      }
+    },
+    "France": {
+      "Code": 33,
+      "Cities": {
+        "Paris": ["Île-de-France", "Normandy"],
+        "Lyon": ["Auvergne-Rhône-Alpes", "Bourgogne-Franche-Comté"]
+      }
+    },
+    "Germany": {
+      "Code": 49,
+      "Cities": {
+        "Berlin": ["Berlin", "Brandenburg"],
+        "Munich": ["Bavaria", "Saxony"]
+      }
+    },
+    "Italy": {
+      "Code": 39,
+      "Cities": {
+        "Rome": ["Lazio", "Abruzzo"],
+        "Milan": ["Lombardy", "Piedmont"]
+      }
+    },
+    "Netherlands": {
+      "Code": 31,
+      "Cities": {
+        "Amsterdam": ["North Holland", "South Holland"],
+        "Rotterdam": ["South Holland", "Utrecht"]
+      }
+    },
+    "Belgium": {
+      "Code": 32,
+      "Cities": {
+        "Brussels": ["Brussels-Capital", "Flanders"],
+        "Antwerp": ["Flanders", "Wallonia"]
+      }
+    },
+    "Switzerland": {
+      "Code": 41,
+      "Cities": {
+        "Zurich": ["Zurich", "Aargau"],
+        "Geneva": ["Geneva", "Vaud"]
+      }
+    },
+    "Austria": {
+      "Code": 43,
+      "Cities": {
+        "Vienna": ["Vienna", "Lower Austria"],
+        "Salzburg": ["Salzburg", "Tyrol"]
+      }
+    },
+    "Ireland": {
+      "Code": 353,
+      "Cities": {
+        "Dublin": ["Leinster", "Munster"],
+        "Cork": ["Munster", "Connacht"]
+      }
+    },
+    "Norway": {
+      "Code": 47,
+      "Cities": {
+        "Oslo": ["Oslo County", "Viken"],
+        "Bergen": ["Vestland", "Rogaland"]
+      }
+    },
+    "Sweden": {
+      "Code": 46,
+      "Cities": {
+        "Stockholm": ["Stockholm County", "Uppsala County"],
+        "Gothenburg": ["Västra Götaland", "Halland"]
+      }
+    },
+    "Denmark": {
+      "Code": 45,
+      "Cities": {
+        "Copenhagen": ["Capital Region", "Zealand"],
+        "Aarhus": ["Central Denmark", "North Jutland"]
+      }
+    },
+    "Finland": {
+      "Code": 358,
+      "Cities": {
+        "Helsinki": ["Uusimaa", "Southwest Finland"],
+        "Turku": ["Southwest Finland", "Satakunta"]
+      }
+    },
+    "Iceland": {
+      "Code": 354,
+      "Cities": {
+        "Reykjavik": ["Capital Region", "Southwest Iceland"],
+        "Akureyri": ["Northeast Iceland", "North Iceland"]
+      }
+    },
+    "Portugal": {
+      "Code": 351,
+      "Cities": {
+        "Lisbon": ["Lisbon District", "Setúbal"],
+        "Porto": ["Porto District", "Braga"]
+      }
+    }
+  },
+  "East European": {
+    "Russia": {
+      "Code": 7,
+      "Cities": {
+        "Moscow": ["Moscow Oblast", "Tver Oblast"],
+        "Saint Petersburg": ["Leningrad Oblast", "Novgorod Oblast"]
+      }
+    },
+    "Poland": {
+      "Code": 48,
+      "Cities": {
+        "Warsaw": ["Mazovia", "Lesser Poland"],
+        "Krakow": ["Lesser Poland", "Silesia"]
+      }
+    },
+    "Czech Republic": {
+      "Code": 420,
+      "Cities": {
+        "Prague": ["Central Bohemia", "South Bohemia"],
+        "Brno": ["South Moravia", "Zlin"]
+      }
+    },
+    "Slovakia": {
+      "Code": 421,
+      "Cities": {
+        "Bratislava": ["Bratislava Region", "Trnava Region"],
+        "Košice": ["Košice Region", "Prešov Region"]
+      }
+    },
+    "Hungary": {
+      "Code": 36,
+      "Cities": {
+        "Budapest": ["Central Hungary", "Pest"],
+        "Debrecen": ["Hajdú-Bihar", "Szabolcs-Szatmár-Bereg"]
+      }
+    },
+    "Ukraine": {
+      "Code": 380,
+      "Cities": {
+        "Kyiv": ["Kyiv Oblast", "Chernihiv Oblast"],
+        "Lviv": ["Lviv Oblast", "Ivano-Frankivsk Oblast"]
+      }
+    },
+    "Belarus": {
+      "Code": 375,
+      "Cities": {
+        "Minsk": ["Minsk Region", "Gomel Region"],
+        "Brest": ["Brest Region", "Grodno Region"]
+      }
+    },
+    "Romania": {
+      "Code": 40,
+      "Cities": {
+        "Bucharest": ["Bucharest", "Ilfov"],
+        "Cluj-Napoca": ["Cluj", "Napoca"]
+      }
+    },
+    "Bulgaria": {
+      "Code": 359,
+      "Cities": {
+        "Sofia": ["Sofia City", "Sofia Province"],
+        "Plovdiv": ["Plovdiv Province", "Stara Zagora"]
+      }
+    },
+    "Serbia": {
+      "Code": 381,
+      "Cities": {
+        "Belgrade": ["Belgrade District", "Vojvodina"],
+        "Novi Sad": ["Vojvodina", "Central Serbia"]
+      }
+    },
+    "Croatia": {
+      "Code": 385,
+      "Cities": {
+        "Zagreb": ["Zagreb County", "Krapina-Zagorje"],
+        "Split": ["Split-Dalmatia", "Zadar"]
+      }
+    },
+    "Slovenia": {
+      "Code": 386,
+      "Cities": {
+        "Ljubljana": ["Central Slovenia", "Upper Carniola"],
+        "Maribor": ["Styria", "Drava"]
+      }
+    },
+    "Bosnia and Herzegovina": {
+      "Code": 387,
+      "Cities": {
+        "Sarajevo": ["Sarajevo Canton", "Zenica-Doboj"],
+        "Banja Luka": ["Republika Srpska", "Posavina"]
+      }
+    },
+    "Lithuania": {
+      "Code": 370,
+      "Cities": {
+        "Vilnius": ["Vilnius County", "Alytus County"],
+        "Kaunas": ["Kaunas County", "Klaipėda County"]
+      }
+    },
+    "Latvia": {
+      "Code": 371,
+      "Cities": {
+        "Riga": ["Riga Region", "Vidzeme"],
+        "Daugavpils": ["Latgale", "Selonia"]
+      }
+    }
+  },
+  "Chinese": {
+    "China": {
+      "Code": 86,
+      "Cities": {
+        "Beijing": ["Beijing Municipality", "Hebei Province"],
+        "Shanghai": ["Shanghai Municipality", "Jiangsu Province"]
+      }
+    },
+    "Mongolia": {
+      "Code": 976,
+      "Cities": {
+        "Ulaanbaatar": ["Ulaanbaatar Province", "Töv Province"],
+        "Erdenet": ["Orkhon Province", "Darkhan-Uul Province"]
+      }
+    },
+    "Taiwan": {
+      "Code": 886,
+      "Cities": {
+        "Taipei": ["Taipei City", "New Taipei"],
+        "Kaohsiung": ["Kaohsiung City", "Pingtung"]
+      }
+    }
+  },
+  "Japanese": {
+    "Japan": {
+      "Code": 81,
+      "Cities": {
+        "Tokyo": ["Tokyo Metropolis", "Chiba Prefecture"],
+        "Osaka": ["Osaka Prefecture", "Hyogo Prefecture"]
+      }
+    },
+    "South Korea": {
+      "Code": 82,
+      "Cities": {
+        "Seoul": ["Seoul Capital Area", "Gyeonggi Province"],
+        "Busan": ["Busan Metropolitan", "Ulsan"]
+      }
+    },
+    "North Korea": {
+      "Code": 850,
+      "Cities": {
+        "Pyongyang": ["Pyongyang City", "South Pyongan"],
+        "Hamhung": ["South Hamgyong", "North Hamgyong"]
+      }
+    }
+  },
+  "African": {
+    "Nigeria": {
+      "Code": 234,
+      "Cities": {
+        "Lagos": ["Lagos State", "Ogun State"],
+        "Abuja": ["FCT", "Niger State"]
+      }
+    },
+    "South Africa": {
+      "Code": 27,
+      "Cities": {
+        "Johannesburg": ["Gauteng", "North West"],
+        "Cape Town": ["Western Cape", "Eastern Cape"]
+      }
+    },
+    "Kenya": {
+      "Code": 254,
+      "Cities": {
+        "Nairobi": ["Nairobi County", "Kiambu County"],
+        "Mombasa": ["Mombasa County", "Kwale County"]
+      }
+    },
+    "Ethiopia": {
+      "Code": 251,
+      "Cities": {
+        "Addis Ababa": ["Addis Ababa City", "Oromia"],
+        "Gondar": ["Amhara", "Tigray"]
+      }
+    },
+    "Ghana": {
+      "Code": 233,
+      "Cities": {
+        "Accra": ["Greater Accra", "Central Region"],
+        "Kumasi": ["Ashanti", "Brong-Ahafo"]
+      }
+    },
+    "Tanzania": {
+      "Code": 255,
+      "Cities": {
+        "Dar es Salaam": ["Dar es Salaam Region", "Coast Region"],
+        "Dodoma": ["Dodoma Region", "Singida Region"]
+      }
+    },
+    "Uganda": {
+      "Code": 256,
+      "Cities": {
+        "Kampala": ["Central Region", "Eastern Region"],
+        "Gulu": ["Northern Region", "West Nile"]
+      }
+    },
+    "Cameroon": {
+      "Code": 237,
+      "Cities": {
+        "Yaoundé": ["Centre", "Littoral"],
+        "Douala": ["Littoral", "Southwest"]
+      }
+    },
+    "Senegal": {
+      "Code": 221,
+      "Cities": {
+        "Dakar": ["Dakar Region", "Thiès"],
+        "Saint-Louis": ["Saint-Louis Region", "Louga"]
+      }
+    },
+    "Zimbabwe": {
+      "Code": 263,
+      "Cities": {
+        "Harare": ["Harare Province", "Mashonaland Central"],
+        "Bulawayo": ["Bulawayo Province", "Matabeleland North"]
+      }
+    },
+    "Zambia": {
+      "Code": 260,
+      "Cities": {
+        "Lusaka": ["Lusaka Province", "Central Province"],
+        "Ndola": ["Copperbelt", "North-Western Province"]
+      }
+    },
+    "Botswana": {
+      "Code": 267,
+      "Cities": {
+        "Gaborone": ["South-East District", "Kweneng District"],
+        "Francistown": ["North-East District", "Central District"]
+      }
+    },
+    "Namibia": {
+      "Code": 264,
+      "Cities": {
+        "Windhoek": ["Khomas Region", "Erongo Region"],
+        "Swakopmund": ["Erongo Region", "Omaheke"]
+      }
+    },
+    "Mozambique": {
+      "Code": 258,
+      "Cities": {
+        "Maputo": ["Maputo Province", "Gaza"],
+        "Beira": ["Sofala", "Manica"]
+      }
+    },
+    "Angola": {
+      "Code": 244,
+      "Cities": {
+        "Luanda": ["Luanda Province", "Bengo"],
+        "Lubango": ["Huíla", "Namibe"]
+      }
+    },
+    "Rwanda": {
+      "Code": 250,
+      "Cities": {
+        "Kigali": ["Kigali City", "Southern Province"],
+        "Butare": ["Southern Province", "Western Province"]
+      }
+    },
+    "Burundi": {
+      "Code": 257,
+      "Cities": {
+        "Bujumbura": ["Bujumbura Mairie", "Bujumbura Rural"],
+        "Gitega": ["Gitega Province", "Kayanza"]
+      }
+    }
+  },
+  "Arab": {
+    "Egypt": {
+      "Code": 20,
+      "Cities": {
+        "Cairo": ["Cairo Governorate", "Giza"],
+        "Alexandria": ["Alexandria Governorate", "Beheira"]
+      }
+    },
+    "Saudi Arabia": {
+      "Code": 966,
+      "Cities": {
+        "Riyadh": ["Riyadh Province", "Qassim"],
+        "Jeddah": ["Makkah Province", "Medina Province"]
+      }
+    },
+    "United Arab Emirates": {
+      "Code": 971,
+      "Cities": {
+        "Abu Dhabi": ["Abu Dhabi Emirate", "Al Ain"],
+        "Dubai": ["Dubai Emirate", "Sharjah"]
+      }
+    },
+    "Qatar": {
+      "Code": 974,
+      "Cities": {
+        "Doha": ["Doha Municipality", "Al Rayyan"],
+        "Al Khor": ["Al Khor Municipality", "Al Shamal"]
+      }
+    },
+    "Bahrain": {
+      "Code": 973,
+      "Cities": {
+        "Manama": ["Capital Governorate", "Northern Governorate"],
+        "Riffa": ["Southern Governorate", "Central Governorate"]
+      }
+    },
+    "Oman": {
+      "Code": 968,
+      "Cities": {
+        "Muscat": ["Muscat Governorate", "Al Batinah"],
+        "Salalah": ["Dhofar", "Al Wusta"]
+      }
+    },
+    "Yemen": {
+      "Code": 967,
+      "Cities": {
+        "Sana'a": ["Sana'a City", "Sana'a Governorate"],
+        "Aden": ["Aden Governorate", "Lahej"]
+      }
+    },
+    "Libya": {
+      "Code": 218,
+      "Cities": {
+        "Tripoli": ["Tripoli District", "Jabal al Gharbi"],
+        "Benghazi": ["Benghazi District", "Cyrenaica"]
+      }
+    },
+    "Tunisia": {
+      "Code": 216,
+      "Cities": {
+        "Tunis": ["Tunis Governorate", "Ariana"],
+        "Sfax": ["Sfax Governorate", "Sousse"]
+      }
+    },
+    "Algeria": {
+      "Code": 213,
+      "Cities": {
+        "Algiers": ["Algiers Province", "Blida"],
+        "Oran": ["Oran Province", "Mostaganem"]
+      }
+    },
+    "Morocco": {
+      "Code": 212,
+      "Cities": {
+        "Rabat": ["Rabat-Salé-Kénitra", "Casablanca-Settat"],
+        "Casablanca": ["Casablanca-Settat", "Marrakesh-Safi"]
+      }
+    },
+    "Jordan": {
+      "Code": 962,
+      "Cities": {
+        "Amman": ["Amman Governorate", "Balqa"],
+        "Aqaba": ["Aqaba Governorate", "Ma'an"]
+      }
+    },
+    "Lebanon": {
+      "Code": 961,
+      "Cities": {
+        "Beirut": ["Beirut Governorate", "Mount Lebanon"],
+        "Tripoli": ["North Governorate", "Akkar"]
+      }
+    },
+    "Syria": {
+      "Code": 963,
+      "Cities": {
+        "Damascus": ["Damascus Governorate", "Rural Damascus"],
+        "Aleppo": ["Aleppo Governorate", "Idlib"]
+      }
+    },
+    "Iraq": {
+      "Code": 964,
+      "Cities": {
+        "Baghdad": ["Baghdad Governorate", "Babil"],
+        "Basra": ["Basra Governorate", "Dhi Qar"]
+      }
+    },
+    "Kuwait": {
+      "Code": 965,
+      "Cities": {
+        "Kuwait City": ["Capital Governorate", "Hawalli"],
+        "Al Ahmadi": ["Ahmadi Governorate", "Farwaniya"]
+      }
+    },
+    "Iran": {
+      "Code": 98,
+      "Cities": {
+        "Tehran": ["Tehran Province", "Alborz"],
+        "Isfahan": ["Isfahan Province", "Yazd"]
+      }
+    },
+    "Turkey": {
+      "Code": 90,
+      "Cities": {
+        "Ankara": ["Ankara Province", "Kırıkkale"],
+        "Istanbul": ["Istanbul Province", "Bursa"]
+      }
+    }
+  },
+  "Indian": {
+    "India": {
+      "Code": 91,
+      "Cities": {
+        "New Delhi": ["Delhi", "Haryana"],
+        "Mumbai": ["Maharashtra", "Goa"]
+      }
+    },
+    "Pakistan": {
+      "Code": 92,
+      "Cities": {
+        "Islamabad": ["Islamabad Capital Territory", "Punjab"],
+        "Karachi": ["Sindh", "Balochistan"]
+      }
+    },
+    "Bangladesh": {
+      "Code": 880,
+      "Cities": {
+        "Dhaka": ["Dhaka Division", "Chittagong Division"],
+        "Chittagong": ["Chittagong Division", "Sylhet Division"]
+      }
+    },
+    "Sri Lanka": {
+      "Code": 94,
+      "Cities": {
+        "Colombo": ["Western Province", "Central Province"],
+        "Kandy": ["Central Province", "Sabaragamuwa Province"]
+      }
+    },
+    "Nepal": {
+      "Code": 977,
+      "Cities": {
+        "Kathmandu": ["Bagmati Province", "Gandaki Province"],
+        "Pokhara": ["Gandaki Province", "Lumbini Province"]
+      }
+    },
+    "Bhutan": {
+      "Code": 975,
+      "Cities": {
+        "Thimphu": ["Thimphu District", "Paro District"],
+        "Phuntsholing": ["Chukha District", "Samtse District"]
+      }
+    },
+    "Maldives": {
+      "Code": 960,
+      "Cities": {
+        "Malé": ["Malé City", "Kaafu Atoll"],
+        "Addu City": ["Addu Atoll", "Seenu Atoll"]
+      }
+    }
+  }
+}

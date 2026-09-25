@@ -1,0 +1,143 @@
+{
+    "Spanish": {
+        "FirstNames": [
+            "Alejandro",
+            "Sofia",
+            "Carlos",
+            "Isabella",
+            "Bad"
+        ],
+        "LastNames": [
+            "Garcia",
+            "Martinez",
+            "Lopez",
+            "Hernandez",
+            "Bunny"
+        ]
+    },
+    "Europen": {
+        "FirstNames": [
+            "Liam",
+            "Emma",
+            "Noah",
+            "Olivia",
+            "Victor"
+        ],
+        "LastNames": [
+            "Smith",
+            "Johnson",
+            "Brown",
+            "Taylor",
+            "Adams"
+        ]
+    },
+    "East European": {
+        "FirstNames": [
+            "Ivan",
+            "Anastasia",
+            "Dmitry",
+            "Olga",
+            "Alexei",
+            "Alexandra",
+            "Svetlana"
+        ],
+        "LastNames": [
+            "Ivanov",
+            "Petrov",
+            "Sokolov",
+            "Kuznetsov",
+            "Popov",
+            "Khusanov"
+        ]
+    },
+    "Chinese": {
+        "FirstNames": [
+            "Wei",
+            "Fang",
+            "Li",
+            "Mei",
+            "Nao",
+            "Nguyen"
+        ],
+        "LastNames": [
+            "Wang",
+            "Li",
+            "Zhang",
+            "Liu",
+            "Chen"
+        ]
+    },
+    "Japanese": {
+        "FirstNames": [
+            "Haruto",
+            "Yui",
+            "Sota",
+            "Hina",
+            "Ren",
+            "Aoi",
+            "Oda"
+        ],
+        "LastNames": [
+            "Sato",
+            "Suzuki",
+            "Takahashi",
+            "Tanaka",
+            "Watanabe"
+        ]
+    },
+    "African": {
+        "FirstNames": [
+            "Kwame",
+            "Amina",
+            "Chinua",
+            "Zuri",
+            "Victor"
+        ],
+        "LastNames": [
+            "Okafor",
+            "Mensah",
+            "Diallo",
+            "Kamara",
+            "Ndlovu"
+        ]
+    },
+    "Arab": {
+        "FirstNames": [
+            "Ahmed",
+            "Fatima",
+            "Omar",
+            "Layla",
+            "Youssef",
+            "Adam",
+            "Mariam"
+        ],
+        "LastNames": [
+            "Hassan",
+            "Ali",
+            "Abdullah",
+            "Rahman",
+            "Al-Farsi",
+            "Al-Ibrahimi"
+        ]
+    },
+    "Indian": {
+        "FirstNames": [
+            "Arjun",
+            "Priya",
+            "Ravi",
+            "Anjali",
+            "Vikram",
+            "Sneha",
+            "Amit"
+        ],
+        "LastNames": [
+            "Patel",
+            "Singh",
+            "Kumar",
+            "Sharma",
+            "Gupta",
+            "Reddy",
+            "Chatterjee"
+        ]
+    }
+} 
