@@ -1,6 +1,9 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, error::Error};
 
+use rand::Rng;
 use serde_json::Value;
+
+use crate::randt::{Rand, RandomError};
 
 pub fn load_countries() -> Result<HashMap<String, Value>, Box<dyn std::error::Error>> {
     let json = std::fs::read_to_string("countries.json")?;
@@ -27,23 +30,28 @@ pub struct Country {
     pub cities: HashMap<String, [String; 2]>,
 }
 
-#[derive(Debug)]
-pub enum Race {
-    Hispanic,
-    European,
-    EastEuropean,
-    Chinese,
-    Japanese,
-    African,
-    Arab,
-    Hindu,
-}
+impl Rand for Country {
+    fn rand(_args: &[String]) -> Result<Self, Box<dyn Error>> {
+        let countries = load_countries()?;
 
-#[derive(Debug)]
-pub struct Address {
-    pub race: Race,
-    pub country_code: u16,
-    pub province: String,
-    pub city: String,
-    pub zip_code: u32,
+        let mut rng: rand::prelude::ThreadRng = rand::rng();
+
+        let race = rng.random_range(0..countries.len());
+
+        let group = countries
+            .values()
+            .nth(race)
+            .ok_or(RandomError::RandomCountryError)?;
+
+        let group = group.as_object().ok_or(RandomError::RandomCountryError)?;
+
+        let index = rng.random_range(0..group.len());
+
+        let country = group
+            .values()
+            .nth(index)
+            .ok_or(RandomError::RandomCountryError)?;
+
+        Ok(serde_json::from_value(country.clone())?)
+    }
 }
