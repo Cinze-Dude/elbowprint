@@ -2,12 +2,6 @@ use std::collections::HashMap;
 
 use serde_json::Value;
 
-#[derive(Debug)]
-pub struct Country {
-    code: u8,
-    cities: Vec<String>,
-}
-
 pub fn load_countries() -> Result<HashMap<String, Value>, Box<dyn std::error::Error>> {
     let json = std::fs::read_to_string("countries.json")?;
 
@@ -22,4 +16,34 @@ pub fn load_names() -> Result<HashMap<String, Value>, Box<dyn std::error::Error>
     let data = serde_json::from_str(&json)?;
 
     Ok(data)
+}
+
+#[derive(Debug, serde::Deserialize)]
+pub struct Country {
+    #[serde(rename = "Code")]
+    pub code: u16,
+
+    #[serde(rename = "Cities")]
+    pub cities: HashMap<String, [String; 2]>,
+}
+
+#[derive(Debug)]
+pub enum Race {
+    Hispanic,
+    European,
+    EastEuropean,
+    Chinese,
+    Japanese,
+    African,
+    Arab,
+    Hindu,
+}
+
+#[derive(Debug)]
+pub struct Address {
+    race: Race,
+    country_code: u8,
+    province: String,
+    city: String,
+    zip_code: u32,
 }
