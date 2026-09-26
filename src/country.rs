@@ -41,9 +41,9 @@ pub enum Race {
 
 #[derive(Debug)]
 pub struct Address {
-    race: Race,
-    country_code: u8,
-    province: String,
-    city: String,
-    zip_code: u32,
+    pub race: Race,
+    pub country_code: u16,
+    pub province: String,
+    pub city: String,
+    pub zip_code: u32,
 }
