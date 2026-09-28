@@ -357,13 +357,6 @@
         "Seoul": ["Seoul Capital Area", "Gyeonggi Province"],
         "Busan": ["Busan Metropolitan", "Ulsan"]
       }
-    },
-    "North Korea": {
-      "Code": 850,
-      "Cities": {
-        "Pyongyang": ["Pyongyang City", "South Pyongan"],
-        "Hamhung": ["South Hamgyong", "North Hamgyong"]
-      }
     }
   },
   "African": {

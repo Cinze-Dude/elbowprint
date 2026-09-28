@@ -1,10 +1,10 @@
-use rand::{Rng, seq::IndexedRandom};
+use rand::seq::IndexedRandom;
 use regex::Regex;
 use std::error::Error;
 
 use crate::randt::Rand;
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
 pub enum CardType {
     Visa,
     MasterCard,
@@ -18,7 +18,7 @@ pub enum CardType {
 }
 
 impl CardType {
-    pub fn new(pan: String) -> Result<Option<Self>, Box<dyn Error>> {
+    pub fn new(pan: &str) -> Result<Option<Self>, Box<dyn Error>> {
         if pan.len() != 16 || !pan.chars().all(|c| c.is_ascii_digit()) {
             Err(Box::new(std::io::Error::new(
                 std::io::ErrorKind::InvalidInput,
@@ -67,5 +67,23 @@ impl Rand for CardType {
             .choose(&mut rng)
             .copied()
             .ok_or_else(|| "no card types available".into())
+    }
+}
+
+impl TryFrom<&str> for CardType {
+    type Error = Box<dyn Error>;
+    fn try_from(value: &str) -> Result<Self, Self::Error> {
+        match value.to_lowercase().as_str() {
+            "visa" => Ok(CardType::Visa),
+            "unionpay" => Ok(CardType::UnionPay),
+            "mastercard" => Ok(CardType::MasterCard),
+            "amex" | "american express" => Ok(CardType::AmericanExpress),
+            "jcb" => Ok(CardType::JapaneseBank),
+            "discover" => Ok(CardType::Discover),
+            "rupay" => Ok(CardType::RuPay),
+            "maestro" => Ok(CardType::Maestro),
+            "elo" => Ok(CardType::Elo),
+            _ => Err("Unknown card type".into()),
+        }
     }
 }

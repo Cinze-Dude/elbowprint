@@ -1,9 +1,10 @@
-use crate::credittypes::CardType;
+use crate::credittype::CardType;
 use std::error::Error;
 
 pub mod address;
 pub mod country;
-pub mod credittypes;
+pub mod creditcard;
+pub mod credittype;
 pub mod randt;
 
 fn main() -> Result<(), Box<dyn Error>> {
@@ -23,7 +24,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     ];
 
     for (name, pan) in cards {
-        match CardType::new(pan.to_string()) {
+        match CardType::new(pan) {
             Ok(Some(card_type)) => {
                 println!("{name}: {pan} -> {card_type:?}");
             }
@@ -47,7 +48,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     ];
 
     for (name, pan) in invalid_cards {
-        match CardType::new(pan.to_string()) {
+        match CardType::new(pan) {
             Ok(Some(card_type)) => {
                 println!("{name}: {pan:?} -> {card_type:?}");
             }
