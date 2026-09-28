@@ -15,8 +15,10 @@
 // 	return byte((10-(sum%10))%10 + '0')
 // }
 
-pub trait Luhn {
-    fn luhn_check_sum(pan: &str) -> u32 {
+pub struct Luhn {}
+
+impl Luhn {
+    pub fn luhn_check_sum(pan: &str) -> u32 {
         let mut s = 0;
         pan.as_bytes()[..pan.len() - 1]
             .iter()
@@ -28,7 +30,7 @@ pub trait Luhn {
         s % 10
     }
 
-    fn luhn_check_digit(pan: &str) -> u8 {
+    pub fn luhn_check_digit(pan: &str) -> u8 {
         let mut sum = 0;
         let mut double = true;
 
@@ -44,7 +46,7 @@ pub trait Luhn {
         b'0' + (10 - sum % 10) % 10
     }
 
-    fn luhn_pan(pan: &mut String) {
+    pub fn luhn_pan(pan: &mut String) {
         let check = Self::luhn_check_digit(pan);
         pan.push(char::from(check));
     }

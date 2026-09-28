@@ -4,7 +4,7 @@ use rand::Rng;
 
 use chrono::{Datelike, Local};
 
-use crate::{credittype::CardType, randt::Rand};
+use crate::{credittype::CardType, luhn::Luhn, randt::Rand};
 
 fn weighted_choice<K: Clone>(choices: &[(K, usize)]) -> K {
     let mut wc = Vec::new();
@@ -116,16 +116,19 @@ impl Rand for CreditCard {
         };
 
         let rest_pan_l = 15u32 - u32::try_from(iin.len())?;
+        let mut pan = format!(
+            "{}{}",
+            iin,
+            rng.random_range(10u64.pow(rest_pan_l - 1)..10u64.pow(rest_pan_l))
+        );
+
+        Luhn::luhn_pan(&mut pan);
 
         let cur_year: u16 = (Local::now().year() % 100).try_into()?;
 
         Ok(Self {
             cardtype,
-            pan: format!(
-                "{}{}",
-                iin,
-                rng.random_range(10u64.pow(rest_pan_l - 1)..10u64.pow(rest_pan_l))
-            ),
+            pan,
             cvc: rng.random_range(100..999),
             expire: rng.random_range(cur_year..cur_year + 5),
         })
