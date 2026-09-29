@@ -1,53 +1,56 @@
-// func luhnCheckDigit(num string) byte {
-// 	sum := 0
-// 	double := true
-// 	for i := len(num) - 1; i >= 0; i-- {
-// 		d := int(num[i] - '0')
-// 		if double {
-// 			d *= 2
-// 			if d > 9 {
-// 				d -= 9
-// 			}
-// 		}
-// 		sum += d
-// 		double = !double
-// 	}
-// 	return byte((10-(sum%10))%10 + '0')
-// }
+pub trait Luhn {
+    fn luhn_check_sum(&self) -> u32;
+    fn luhn_check_digit(&self) -> u8;
+    fn luhn_pan(&self) -> String;
+    fn luhn_check(&self) -> bool;
+}
 
-pub struct Luhn {}
-
-impl Luhn {
-    pub fn luhn_check_sum(pan: &str) -> u32 {
-        let mut s = 0;
-        pan.as_bytes()[..pan.len() - 1]
-            .iter()
-            .enumerate()
-            .for_each(|(i, &b)| {
-                let n = (b - b'0') as u32;
-                s += if i % 2 == 1 { n * 2 % 9 } else { n };
-            });
-        s % 10
-    }
-
-    pub fn luhn_check_digit(pan: &str) -> u8 {
+impl<T: AsRef<str>> Luhn for T {
+    fn luhn_check_sum(&self) -> u32 {
+        let pan = self.as_ref();
         let mut sum = 0;
-        let mut double = true;
 
-        pan.as_bytes().iter().for_each(|b| {
-            let mut d = b - b'0';
-            if double {
-                d = d * 2 % 9;
-            }
-            sum += d;
-            double = !double;
-        });
+        for (i, &b) in pan.as_bytes().iter().rev().enumerate() {
+            let n = (b - b'0') as u32;
 
-        b'0' + (10 - sum % 10) % 10
+            sum += if i % 2 == 0 {
+                let d = n * 2;
+                if d > 9 { d - 9 } else { d }
+            } else {
+                n
+            };
+        }
+
+        sum % 10
     }
 
-    pub fn luhn_pan(pan: &mut String) {
-        let check = Self::luhn_check_digit(pan);
-        pan.push(char::from(check));
+    fn luhn_check_digit(&self) -> u8 {
+        let sum = self.luhn_check_sum();
+        b'0' + ((10 - sum) % 10) as u8
+    }
+
+    fn luhn_pan(&self) -> String {
+        let check = self.luhn_check_digit();
+        format!("{}{}", self.as_ref(), check as char)
+    }
+
+    fn luhn_check(&self) -> bool {
+        let pan = self.as_ref();
+        let mut sum = 0;
+
+        for (i, &b) in pan.as_bytes().iter().rev().enumerate() {
+            let mut n = (b - b'0') as u32;
+
+            if i % 2 == 1 {
+                n *= 2;
+                if n > 9 {
+                    n -= 9;
+                }
+            }
+
+            sum += n;
+        }
+
+        sum % 10 == 0
     }
 }

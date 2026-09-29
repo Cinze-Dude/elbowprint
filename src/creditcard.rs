@@ -7,23 +7,25 @@ use chrono::{Datelike, Local};
 use crate::{credittype::CardType, luhn::Luhn, randt::Rand};
 
 fn weighted_choice<K: Clone>(choices: &[(K, usize)]) -> K {
-    let mut wc = Vec::new();
-
-    choices
-        .iter()
-        .for_each(|(k, v)| (0usize..*v).for_each(|_| wc.push(k.clone())));
-
     let mut rng = rand::rng();
+    let mut n = rng.random_range(0..choices.iter().map(|(_, w)| w).sum());
 
-    wc[rng.random_range(0..wc.len())].clone()
+    for (k, w) in choices {
+        if n < *w {
+            return k.clone();
+        }
+        n -= w;
+    }
+
+    unreachable!()
 }
 
 #[derive(Debug)]
 pub struct CreditCard {
-    cardtype: CardType,
-    pan: String,
-    cvc: u16,
-    expire: u16,
+    pub cardtype: CardType,
+    pub pan: String,
+    pub cvc: u16,
+    pub expire: u16,
 }
 
 impl CreditCard {
@@ -55,12 +57,14 @@ impl Rand for CreditCard {
             (CardType::Elo, 2),
         ];
 
-        let requested: Vec<CardType> = args
-            .iter()
-            .filter_map(|arg| CardType::try_from(arg.as_str()).ok())
-            .collect();
+        if args.len() != 0 {
+            let requested: Vec<CardType> = args
+                .iter()
+                .filter_map(|arg| CardType::try_from(arg.as_str()).ok())
+                .collect();
 
-        types.retain(|(card_type, _)| requested.contains(card_type));
+            types.retain(|(card_type, _)| requested.contains(card_type));
+        }
 
         let cardtype = weighted_choice(&types);
 
@@ -122,7 +126,7 @@ impl Rand for CreditCard {
             rng.random_range(10u64.pow(rest_pan_l - 1)..10u64.pow(rest_pan_l))
         );
 
-        Luhn::luhn_pan(&mut pan);
+        pan = Luhn::luhn_pan(&mut pan);
 
         let cur_year: u16 = (Local::now().year() % 100).try_into()?;
 
