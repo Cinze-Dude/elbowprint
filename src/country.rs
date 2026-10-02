@@ -1,6 +1,6 @@
 use std::{collections::HashMap, error::Error};
 
-use rand::Rng;
+use rand::{Rng, rngs::ThreadRng};
 use serde_json::Value;
 
 use crate::randt::{Rand, RandomError};
@@ -31,10 +31,8 @@ pub struct Country {
 }
 
 impl Rand for Country {
-    fn rand(_args: &[String]) -> Result<Self, Box<dyn Error>> {
+    fn rand(rng: &mut ThreadRng, _args: &[String]) -> Result<Self, Box<dyn Error>> {
         let countries = load_countries()?;
-
-        let mut rng: rand::prelude::ThreadRng = rand::rng();
 
         let race = rng.random_range(0..countries.len());
 

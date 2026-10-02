@@ -1,4 +1,4 @@
-use rand::seq::IndexedRandom;
+use rand::{rngs::ThreadRng, seq::IndexedRandom};
 use regex::Regex;
 use std::error::Error;
 
@@ -48,7 +48,7 @@ impl CardType {
 }
 
 impl Rand for CardType {
-    fn rand(_args: &[String]) -> Result<Self, Box<dyn Error>> {
+    fn rand(rng: &mut ThreadRng, _args: &[String]) -> Result<Self, Box<dyn Error>> {
         let card_types = [
             CardType::Visa,
             CardType::MasterCard,
@@ -61,10 +61,8 @@ impl Rand for CardType {
             CardType::Elo,
         ];
 
-        let mut rng = rand::rng();
-
         card_types
-            .choose(&mut rng)
+            .choose(rng)
             .copied()
             .ok_or_else(|| "no card types available".into())
     }

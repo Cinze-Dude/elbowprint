@@ -1,6 +1,6 @@
 use std::error::Error;
 
-use rand::Rng;
+use rand::{Rng, rngs::ThreadRng};
 
 use crate::{
     country::Country,
@@ -20,7 +20,7 @@ pub enum Race {
 }
 
 impl Rand for Race {
-    fn rand(args: &[String]) -> Result<Self, Box<dyn Error>> {
+    fn rand(rng: &mut ThreadRng, args: &[String]) -> Result<Self, Box<dyn Error>> {
         if args.len() == 1 {
             if let Ok(x) = args[0].parse::<u8>() {
                 return Ok(match x {
@@ -38,10 +38,8 @@ impl Rand for Race {
         }
 
         if args.len() == 0 {
-            let mut rng = rand::rng();
-
             let race = rng.random_range(0..8);
-            return Race::rand(&[race.to_string()]);
+            return Race::rand(rng, &[race.to_string()]);
         }
 
         Err(Box::new(RandomError::RandomRaceError))
@@ -58,11 +56,10 @@ pub struct Address {
 }
 
 impl Rand for Address {
-    fn rand(args: &[String]) -> Result<Self, Box<dyn Error>> {
-        let mut rng = rand::rng();
+    fn rand(rng: &mut ThreadRng, args: &[String]) -> Result<Self, Box<dyn Error>> {
         let citi = rng.random_range(0..1);
 
-        let country = Country::rand(&[])?;
+        let country = Country::rand(rng, &[])?;
         let city = country
             .cities
             .keys()
@@ -72,7 +69,7 @@ impl Rand for Address {
 
         Ok(Self {
             country_code: country.code,
-            race: Race::rand(args)?,
+            race: Race::rand(rng, args)?,
             province: country.cities[&city][rng.random_range(0..2)].clone(),
             city,
             zip_code: rng.random_range(10000..99999),

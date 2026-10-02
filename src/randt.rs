@@ -1,5 +1,7 @@
 use std::{error::Error, fmt::Display};
 
+use rand::rngs::ThreadRng;
+
 #[derive(Debug)]
 pub enum RandomError {
     RandomCountryError,
@@ -16,5 +18,5 @@ impl Display for RandomError {
 impl Error for RandomError {}
 
 pub trait Rand: Sized {
-    fn rand(args: &[String]) -> Result<Self, Box<dyn Error>>;
+    fn rand(rng: &mut ThreadRng, args: &[String]) -> Result<Self, Box<dyn Error>>;
 }

@@ -1,6 +1,6 @@
 use std::error::Error;
 
-use rand::Rng;
+use rand::{Rng, rngs::ThreadRng};
 
 use chrono::{Datelike, Local};
 
@@ -41,9 +41,7 @@ impl CreditCard {
 }
 
 impl Rand for CreditCard {
-    fn rand(args: &[String]) -> Result<Self, Box<dyn Error>> {
-        let mut rng = rand::rng();
-
+    fn rand(rng: &mut ThreadRng, args: &[String]) -> Result<Self, Box<dyn Error>> {
         // Generate Card Type
         let mut types = vec![
             (CardType::Visa, 400),
