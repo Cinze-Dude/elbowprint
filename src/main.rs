@@ -6,6 +6,7 @@ pub mod country;
 pub mod creditcard;
 pub mod credittype;
 pub mod luhn;
+pub mod phonenumber;
 pub mod randt;
 
 fn main() -> Result<(), Box<dyn Error>> {
